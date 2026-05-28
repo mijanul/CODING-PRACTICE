@@ -30,3 +30,46 @@ No
 - Forms the foundation of advanced techniques like Binary Search on Answer.
 - Commonly used in databases, search engines, and optimized lookup systems.
 - Cannot be efficiently applied to unsorted arrays without sorting first.
+
+- ## Duplicate Elements
+
+- Binary Search does not guarantee returning the first or last occurrence of a duplicate element.
+- When duplicate values exist, the returned index depends on how the search space is divided.
+- Standard Binary Search stops immediately after finding a matching element.
+- To find the leftmost (first occurrence) or rightmost (last occurrence) element, the algorithm must be modified.
+
+### Example
+
+Input:
+
+```js
+const arr = [1, 2, 3, 4, 5, 5, 6, 6, 7, 8, 9, 10];
+
+console.log(binarySearch(arr, 5));
+console.log(binarySearch(arr, 6));
+```
+
+## Future Improvements
+
+- Implement First Occurrence Binary Search.
+- Implement Last Occurrence Binary Search.
+- Learn Lower Bound and Upper Bound concepts.
+- Practice Binary Search on Answer problems.
+- Implement Recursive Binary Search.
+- Learn Binary Search in Rotated Sorted Arrays.
+- Practice searching in 2D matrices.
+- Handle edge cases like:
+  - Empty array
+  - Single element array
+  - Duplicate values
+  - Negative numbers
+  - Large datasets
+- Optimize midpoint calculation using:
+
+```js
+let mid = left + Math.floor((right - left) / 2);
+
+- Practice LeetCode Binary Search pattern problems.
+- Learn how Binary Search is used internally in databases and indexing systems.
+- Understand advanced Binary Search variations used in real-world systems and product-based interviews.
+```
