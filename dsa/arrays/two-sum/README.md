@@ -21,8 +21,6 @@ nums = [2, 7, 11, 15];
 target = 9;
 ```
 
-````
-
 ### Output
 
 ```js
@@ -77,4 +75,3 @@ target = 6;
 - `-10^9 <= nums[i] <= 10^9`
 - `-10^9 <= target <= 10^9`
 - Only one valid answer exists.
-````
