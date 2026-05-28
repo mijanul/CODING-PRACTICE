@@ -16,4 +16,4 @@ function isValidPalindrome(str) {
 
 console.log(isValidPalindrome("madam")); // true
 console.log(isValidPalindrome("tab a bat")); // true
-console.log(isValidPalindrome("Hello JS"));
+console.log(isValidPalindrome("Hello JS")); // false
