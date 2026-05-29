@@ -19,38 +19,82 @@ const suggestionBox = document.getElementById("suggestionBox");
 
 let currentFocus = -1;
 
+// ----------------------
+// Debounce
+// ----------------------
+
 function debounce(func, delay = 500) {
   let timer;
+
   return function (...args) {
     clearTimeout(timer);
-    timer = setTimeout(() => func.apply(this, args), delay);
+
+    timer = setTimeout(() => {
+      func.apply(this, args);
+    }, delay);
   };
 }
 
-function renderSuggestions(value) {
+// ----------------------
+// Render List
+// ----------------------
+
+function renderList(items) {
   suggestionBox.innerHTML = "";
-  currentFocus = -1;
 
-  if (!value.trim()) return;
-
-  const filtered = fruits.filter((fruit) =>
-    fruit.toLocaleLowerCase().includes(value.toLocaleLowerCase()),
-  );
-
-  filtered.forEach((fruit) => {
+  items.forEach((fruit) => {
     const li = document.createElement("li");
 
     li.textContent = fruit;
-
-    li.addEventListener("click", () => {
-      searchInput.value = fruit;
-      suggestionBox.innerHTML = "";
-    });
 
     suggestionBox.appendChild(li);
   });
 }
 
-const debounceSearch = debounce((e) => renderSuggestions(e.target.value));
+// Initial render
 
-searchInput.addEventListener("input", debounceSearch);
+renderList(fruits);
+
+// ----------------------
+// Search Logic
+// ----------------------
+
+function renderSuggestions(value) {
+  currentFocus = -1;
+
+  const query = value.trim().toLowerCase();
+
+  if (!query) {
+    renderList(fruits);
+    return;
+  }
+
+  const filtered = fruits.filter((fruit) =>
+    fruit.toLowerCase().includes(query),
+  );
+
+  renderList(filtered);
+}
+
+// ----------------------
+// Debounced Input
+// ----------------------
+
+const debouncedSearch = debounce((e) => {
+  renderSuggestions(e.target.value);
+}, 300);
+
+searchInput.addEventListener("input", debouncedSearch);
+
+// ----------------------
+// Event Delegation
+// ----------------------
+
+suggestionBox.addEventListener("click", (e) => {
+  if (e.target.tagName !== "LI") return;
+
+  searchInput.value = e.target.textContent;
+
+  // Close dropdown after selection
+  suggestionBox.innerHTML = "";
+});
