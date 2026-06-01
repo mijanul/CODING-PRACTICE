@@ -6,6 +6,7 @@ function threeSum(nums) {
   const result = [];
 
   for (let i = 0; i < nums.length - 2; i++) {
+    if (nums[i] > 0) break; // sorted array so impossible to reach 0
     if (i > 0 && nums[i] === nums[i - 1]) {
       // MOST IMPORTANT TO SKIP DUPLICATE
       continue;
