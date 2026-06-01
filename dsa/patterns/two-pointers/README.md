@@ -75,7 +75,7 @@ Common hints that suggest Two Pointers:
 - Two Sum II
 - [Valid Palindrome](../../strings/valid-palindrome/)
 - Container With Most Water
-- 3Sum
+- [3Sum](../../arrays/3-sum)
 - Remove Duplicates From Sorted Array
 - Move Zeroes
 
