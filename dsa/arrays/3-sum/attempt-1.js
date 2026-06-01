@@ -3,7 +3,7 @@ const nums = [-1, 0, 1, 2, -1, -4];
 function threeSum(nums) {
   nums.sort((a, b) => a - b); // SORTING REQUIRED FOR TWO POINTER
 
-  let result = [];
+  const result = [];
 
   for (let i = 0; i < nums.length - 2; i++) {
     if (i > 0 && nums[i] === nums[i - 1]) {
