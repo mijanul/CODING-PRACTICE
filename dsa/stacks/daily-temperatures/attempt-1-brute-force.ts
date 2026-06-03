@@ -21,3 +21,5 @@ function dailyTemperatures(temperatures: number[]): number[] {
 }
 
 console.log(dailyTemperatures([30, 38, 30, 36, 35, 40, 28]));
+
+export {};
