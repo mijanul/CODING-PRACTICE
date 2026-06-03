@@ -3,8 +3,9 @@
 This repository contains:
 
 - DSA practice
-- React machine coding
-- Vanilla JS practice
+- Machine coding practice
+- Project-based learning
+- Vanilla JavaScript practice
 - TypeScript practice
 - Python solutions
 - Notes and interview preparation
@@ -13,5 +14,6 @@ This repository contains:
 
 - dsa/
 - machine-coding/
-- snippets/
 - notes/
+- projects/
+- snippets/
