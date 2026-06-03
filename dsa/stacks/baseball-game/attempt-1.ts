@@ -15,7 +15,7 @@ const calPoints = function (operations: string[]): number {
       total += res;
     } else if (val === "C") {
       let res = resultArr.pop()!;
-      total -= res ?? 0;
+      total -= res;
     } else {
       let res = Number(val);
       resultArr.push(res);
