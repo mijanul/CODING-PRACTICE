@@ -16,7 +16,7 @@ async function createEntry(data: JournalEntry) {
   return collection.insertOne(data);
 }
 
-async function updateEntry(id: string, data: JournalEntry) {
+async function updateEntry(id: string, data: Partial<JournalEntry>) {
   return collection.updateOne({ _id: new ObjectId(id) }, { $set: data });
 }
 

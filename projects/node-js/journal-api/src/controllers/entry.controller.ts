@@ -98,12 +98,7 @@ const deleteOne = async (req: Request<EntryParams>, res: Response) => {
       });
     }
 
-    res.status(200).json({
-      message: "Entry deleted successfully",
-    });
-
-    // Alternative:
-    // res.status(204).send();
+    res.status(204).send();
   } catch {
     res.status(500).json({
       message: "Failed to delete entry",
