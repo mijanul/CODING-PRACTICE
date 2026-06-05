@@ -1,15 +1,20 @@
 import { MongoClient, Db } from "mongodb";
 
-const client = new MongoClient(process.env.MONGO_URI!);
-
-let db: Db;
+let client: MongoClient | null = null;
+let db: Db | null = null;
 
 async function connectDB() {
+  const uri = process.env.MONGO_URI;
+  if (!uri) {
+    throw new Error("MONGO_URI is not set in environment");
+  }
+
+  client = new MongoClient(uri);
   await client.connect();
 
   console.log("Database connected");
 
-  db = client.db(process.env.DB_NAME);
+  db = client.db(process.env.DB_NAME || "test");
 }
 
 function getDB() {
