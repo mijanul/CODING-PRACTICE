@@ -25,3 +25,8 @@ async function deleteEntry(id: string) {
 }
 
 export { getEntries, getEntry, createEntry, updateEntry, deleteEntry };
+
+// schema check - JOI
+// error checks
+
+// SQS - AWS CONCEPT

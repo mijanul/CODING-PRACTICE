@@ -9,7 +9,7 @@ import {
 } from "../services/entry.service";
 import { ObjectId } from "mongodb";
 import { EntryParams } from "../interfaces/Common";
-import { JournalEntryReq } from "../interfaces/JournalEntry";
+import { JournalEntry, JournalEntryReq } from "../interfaces/JournalEntry";
 
 const getAll = async (req: Request, res: Response) => {
   try {
@@ -41,9 +41,75 @@ const getOne = async (req: Request<EntryParams>, res: Response) => {
 const updateOne = async (
   req: Request<EntryParams, {}, JournalEntryReq>,
   res: Response,
-) => {};
+) => {
+  const id = req.params.id;
 
-const deleteOne = async (req: Request<EntryParams>, res: Response) => {};
+  if (!ObjectId.isValid(id)) {
+    return res.status(400).json({ message: "Invalid Id" });
+  }
+
+  try {
+    const { title, content, tags } = req.body;
+
+    if (!title && !content && !tags) {
+      return res.status(400).json({
+        message: "At least one field is required to update",
+      });
+    }
+
+    const data: JournalEntry = {
+      title,
+      content,
+      tags: tags ?? [],
+      date: new Date(),
+    };
+
+    const updatedEntry = await updateEntry(id, data);
+
+    if (!updatedEntry) {
+      return res.status(404).json({
+        message: "Entry not found",
+      });
+    }
+
+    res.json(updatedEntry);
+  } catch {
+    res.status(500).json({
+      message: "Failed to update entry",
+    });
+  }
+};
+
+const deleteOne = async (req: Request<EntryParams>, res: Response) => {
+  const id = req.params.id;
+
+  if (!ObjectId.isValid(id)) {
+    return res.status(400).json({
+      message: "Invalid Id",
+    });
+  }
+
+  try {
+    const deletedEntry = await deleteEntry(id);
+
+    if (!deletedEntry) {
+      return res.status(404).json({
+        message: "Entry not found",
+      });
+    }
+
+    res.status(200).json({
+      message: "Entry deleted successfully",
+    });
+
+    // Alternative:
+    // res.status(204).send();
+  } catch {
+    res.status(500).json({
+      message: "Failed to delete entry",
+    });
+  }
+};
 
 const create = async (req: Request<{}, {}, JournalEntryReq>, res: Response) => {
   try {
