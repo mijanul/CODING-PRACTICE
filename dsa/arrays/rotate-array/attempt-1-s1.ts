@@ -1,3 +1,5 @@
+//* Extra Array - Time O(n) , space O(n)
+
 /**
  Do not return anything, modify nums in-place instead.
  */
@@ -19,3 +21,5 @@ function rotate(nums: number[], k: number): void {
 }
 
 rotate([1, 2, 3, 4, 5, 6, 7], 3);
+
+export {};
