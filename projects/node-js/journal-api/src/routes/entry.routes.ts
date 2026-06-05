@@ -7,7 +7,7 @@ import {
   updateOne,
   deleteOne,
 } from "../controllers/entry.controller";
-
+import { auth } from "../middleware/auth.middleware";
 import { validate } from "../middleware/validate";
 import {
   createEntrySchema,
@@ -16,12 +16,12 @@ import {
 
 const router = Router();
 
-router.route("/").get(getAll).post(validate(createEntrySchema), create);
+router.route("/").get(getAll).post(auth, validate(createEntrySchema), create);
 
 router
   .route("/:id")
   .get(getOne)
-  .patch(validate(updateEntrySchema), updateOne)
-  .delete(deleteOne);
+  .put(auth, validate(updateEntrySchema), updateOne)
+  .delete(auth, deleteOne);
 
 export default router;

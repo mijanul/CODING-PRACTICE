@@ -13,7 +13,8 @@ import { JournalEntry, JournalEntryReq } from "../interfaces/JournalEntry";
 
 const getAll = async (req: Request, res: Response) => {
   try {
-    const entries = await getEntries();
+    const tag = req.query.tag as string | undefined;
+    const entries = await getEntries(tag);
     res.json(entries);
   } catch {
     res.status(500).json({ message: "Failed to get all entries" });
@@ -45,41 +46,50 @@ const updateOne = async (
   const id = req.params.id;
 
   if (!ObjectId.isValid(id)) {
-    return res.status(400).json({ message: "Invalid Id" });
+    return res.status(400).json({
+      message: "Invalid Id",
+    });
   }
 
   try {
     const { title, content, tags } = req.body;
 
-    if (!title && !content && !tags) {
+    if (title === undefined && content === undefined && tags === undefined) {
       return res.status(400).json({
-        message: "At least one field is required to update",
+        message: "At least one field is required",
       });
     }
 
-    const data: JournalEntry = {
-      title,
-      content,
-      tags: tags ?? [],
-      date: new Date(),
-    };
+    const data: Partial<JournalEntryReq> = {};
 
-    const updatedEntry = await updateEntry(id, data);
+    if (title !== undefined) data.title = title;
 
-    if (!updatedEntry) {
+    if (content !== undefined) data.content = content;
+
+    if (tags !== undefined) data.tags = tags;
+
+    const result = await updateEntry(
+      id,
+      req.user!.userId,
+      req.user!.role,
+      data,
+    );
+
+    if (!result.matchedCount) {
       return res.status(404).json({
-        message: "Entry not found",
+        message: "Entry not found or unauthorized",
       });
     }
 
-    res.json(updatedEntry);
+    res.json({
+      message: "Entry updated successfully",
+    });
   } catch {
     res.status(500).json({
       message: "Failed to update entry",
     });
   }
 };
-
 const deleteOne = async (req: Request<EntryParams>, res: Response) => {
   const id = req.params.id;
 
@@ -90,11 +100,11 @@ const deleteOne = async (req: Request<EntryParams>, res: Response) => {
   }
 
   try {
-    const deletedEntry = await deleteEntry(id);
+    const deleted = await deleteEntry(id, req.user!.userId, req.user!.role);
 
-    if (!deletedEntry) {
+    if (!deleted) {
       return res.status(404).json({
-        message: "Entry not found",
+        message: "Entry not found or unauthorized",
       });
     }
 
@@ -117,6 +127,7 @@ const create = async (req: Request<{}, {}, JournalEntryReq>, res: Response) => {
       content,
       date: new Date(),
       tags: tags ?? [],
+      userId: new ObjectId(req.user!.userId),
     });
 
     res.status(201).json(result);

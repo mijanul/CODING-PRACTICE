@@ -11,4 +11,6 @@ export interface JournalEntry extends JournalEntryReq {
   _id?: ObjectId;
 
   date: Date;
+
+  userId: ObjectId;
 }

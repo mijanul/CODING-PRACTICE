@@ -1,27 +1,48 @@
 import { ObjectId } from "mongodb";
 import { getDB } from "../config/db";
-import { JournalEntry } from "../interfaces/JournalEntry";
+import { JournalEntry, JournalEntryReq } from "../interfaces/JournalEntry";
 
-const collection = getDB().collection("entries");
+function getCollection() {
+  return getDB().collection("entries");
+}
 
-async function getEntries() {
-  return collection.find().toArray();
+async function getEntries(tag?: string) {
+  const filter = tag ? { tags: tag } : {};
+  return getCollection().find(filter).toArray();
 }
 
 async function getEntry(id: string) {
-  return collection.findOne({ _id: new ObjectId(id) });
+  return getCollection().findOne({ _id: new ObjectId(id) });
 }
 
 async function createEntry(data: JournalEntry) {
-  return collection.insertOne(data);
+  return getCollection().insertOne(data);
 }
 
-async function updateEntry(id: string, data: Partial<JournalEntry>) {
-  return collection.updateOne({ _id: new ObjectId(id) }, { $set: data });
+async function updateEntry(
+  id: string,
+  userId: string,
+  role: string,
+  data: Partial<JournalEntryReq>,
+) {
+  const filter =
+    role === "ADMIN"
+      ? { _id: new ObjectId(id) }
+      : { _id: new ObjectId(id), userId: new ObjectId(userId) };
+
+  return getCollection().updateOne(filter, {
+    $set: data,
+  });
 }
 
-async function deleteEntry(id: string) {
-  return collection.deleteOne({ _id: new ObjectId(id) });
+async function deleteEntry(id: string, userId: string, role: string) {
+  const filter =
+    role === "ADMIN"
+      ? { _id: new ObjectId(id) }
+      : { _id: new ObjectId(id), userId: new ObjectId(userId) };
+
+  const result = await getCollection().deleteOne(filter);
+  return result.deletedCount === 1;
 }
 
 export { getEntries, getEntry, createEntry, updateEntry, deleteEntry };
