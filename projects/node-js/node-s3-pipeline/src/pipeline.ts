@@ -5,7 +5,6 @@ import * as dotenv from "dotenv";
 
 dotenv.config();
 
-// Interfaces for our data
 interface MockPhoto {
   id: number;
   title: string;
