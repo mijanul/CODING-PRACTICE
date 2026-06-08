@@ -249,7 +249,7 @@ Move smaller wall.
 
 - Two Sum II
 - Trapping Rain Water
-- Best Time To Buy And Sell Stock
+- [Best Time To Buy And Sell Stock](../best-time-to-buy-and-sell-stock/)
 
 ---
 
