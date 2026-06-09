@@ -116,7 +116,7 @@ shrink
 ## Related Problems
 
 - Maximum Average Subarray
-- Best Time to Buy Stock
+- [Best Time to Buy Stock](../../arrays/best-time-to-buy-and-sell-stock/)
 - Longest Substring Without Repeating Characters
 - Minimum Window Substring
 
