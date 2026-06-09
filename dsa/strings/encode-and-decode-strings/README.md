@@ -237,7 +237,7 @@ Length avoids ambiguity.
 
 # Related Problems
 
-- Group Anagrams
+- [Group Anagrams](../group-anagrams/)
 - Serialize and Deserialize Binary Tree
 - Design TinyURL
 
