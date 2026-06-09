@@ -247,9 +247,9 @@ O(n²)
 
 # Related Problems
 
-- Top K Frequent Elements
+- [Top K Frequent Elements](../top-k-frequent-elements/)
 - Contains Duplicate
-- Group Anagrams
+- [Group Anagrams](../../strings/group-anagrams/)
 
 ---
 
