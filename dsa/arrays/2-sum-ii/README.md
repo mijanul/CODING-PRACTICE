@@ -268,9 +268,9 @@ search.
 
 # Related Problems
 
-- Two Sum
-- Container With Most Water
-- 3Sum
+- [Two Sum](../2-sum/)
+- [Container With Most Water](../container-with-most-water/)
+- [3Sum](../3-sum/)
 
 ---
 
