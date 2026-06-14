@@ -171,6 +171,6 @@ Output: false
 # Related Problems
 
 - [Two Sum](../../arrays/two-sum/)
-- Valid Anagram
+- [Valid Anagram](../valid-anagram/)
 - Reverse String
 - Longest Palindromic Substring
