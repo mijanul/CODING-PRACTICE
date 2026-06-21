@@ -276,7 +276,7 @@ all pairs
 
 - Contains Duplicate
 - Contains Duplicate III
-- Longest Substring Without Repeating Characters
+- [Longest Substring Without Repeating Characters](../../strings/longest-substring-without-repeating-characters/)
 
 ---
 
