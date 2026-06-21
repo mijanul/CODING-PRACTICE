@@ -281,7 +281,7 @@ must stay valid.
 
 # Related Problems
 
-- Longest Substring Without Repeating Characters
+- [Longest Substring Without Repeating Characters](../longest-substring-without-repeating-characters/)
 - Minimum Window Substring
 - Permutation In String
 
