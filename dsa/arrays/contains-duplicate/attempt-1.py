@@ -1,7 +1,7 @@
 from typing import List
 
 
-def containsDuplicate(self, nums: List[int]) -> bool:
+def containsDuplicate( nums: List[int]) -> bool:
   seen = {}
 
   for i in nums:
@@ -12,3 +12,6 @@ def containsDuplicate(self, nums: List[int]) -> bool:
     seen[nums[i]]
 
   return False
+
+
+print(containsDuplicate([1,2,3,1]))
