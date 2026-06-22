@@ -1,4 +1,6 @@
 /** 
+ * First try
+ * Code not optimal
 
 * Complexity
 
