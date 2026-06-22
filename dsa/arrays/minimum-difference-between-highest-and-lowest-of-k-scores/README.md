@@ -214,12 +214,12 @@ Ignoring sorting implementation.
 ### Sliding Window
 
 - Maximum Average Subarray
-- Minimum Recolors to Get K Consecutive Black Blocks
+- [Minimum Recolors to Get K Consecutive Black Blocks](../../strings/minimum-recolors-to-get-k-consecutive-black-blocks/)
 
 ### Similar Thinking
 
-- Contains Duplicate
-- Top K Frequent Elements
+- [Contains Duplicate](../contains-duplicate/)
+- [Top K Frequent Elements](../top-k-frequent-elements/)
 
 ---
 
