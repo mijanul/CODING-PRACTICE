@@ -170,15 +170,15 @@ Only counters.
 
 ### Sliding Window
 
-- Find All Anagrams in a String
+- [Find All Anagrams in a String](../find-all-anagrams-in-a-string/)
 - Permutation in String
 - Maximum Average Subarray
-- Longest Repeating Character Replacement
+- [Longest Repeating Character Replacement](../longest-repeating-character-replacement/)
 
 ### Similar Thinking
 
-- Contains Duplicate II
-- Longest Substring Without Repeating Characters
+- [Contains Duplicate II](../../arrays/contains-duplicate-ii/)
+- [Longest Substring Without Repeating Characters](../longest-substring-without-repeating-characters/)
 
 ---
 
