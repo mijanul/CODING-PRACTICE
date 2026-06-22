@@ -37,6 +37,8 @@ function minimumRecolors(blocks: string, k: number): number {
   return res;
 }
 
-// console.log(minimumRecolors("WBWBBBW", 2)); // 0
-// console.log(minimumRecolors("WBBWWBBWBW", 7)); // 3
+console.log(minimumRecolors("WBWBBBW", 2)); // 0
+console.log(minimumRecolors("WBBWWBBWBW", 7)); // 3
 console.log(minimumRecolors("BWWWBB", 6)); // 3
+
+export {};
