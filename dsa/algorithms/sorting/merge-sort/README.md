@@ -14,6 +14,29 @@
 
 Yes
 
+# The Complete Picture
+
+mergeSort([9,4,1,7])
+
+                    [9,4,1,7]
+                   /         \
+             [9,4]           [1,7]
+            /    \           /    \
+          [9]    [4]       [1]    [7]
+           |      |         |      |
+        return  return    return  return
+           |      |         |      |
+           +------+         +------+
+              |                 |
+        merge([9],[4])    merge([1],[7])
+              |                 |
+            [4,9]             [1,7]
+                \             /
+                 \           /
+              merge([4,9],[1,7])
+                     |
+               [1,4,7,9]
+
 ## Notes
 
 - Uses Divide and Conquer approach.
