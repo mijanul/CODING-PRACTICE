@@ -1,4 +1,4 @@
-function mergeSort(arr: number[]): number[] {
+export default function mergeSort(arr: number[]): number[] {
   if (arr.length <= 1) return arr;
 
   let mid: number = Math.floor(arr.length / 2);
