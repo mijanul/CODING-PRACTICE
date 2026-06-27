@@ -17,3 +17,4 @@ This repository contains:
 - notes/
 - projects/
 - snippets/
+- system-design/
