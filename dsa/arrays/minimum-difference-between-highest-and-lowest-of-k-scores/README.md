@@ -2,29 +2,9 @@
 
 ## Problem
 
-LeetCode 1984
+You are given a 0-indexed integer array `nums`, where `nums[i]` represents the score of the `i`th student. You are also given an integer `k`.
 
-You are given:
-
-```txt
-nums[]
-```
-
-where each value represents a student score.
-
-Choose:
-
-```txt
-k
-```
-
-scores such that the difference between:
-
-```txt
-highest − lowest
-```
-
-is minimized.
+Pick the scores of any `k` students so that the difference between the highest and the lowest score is minimized.
 
 Return the minimum possible difference.
 
@@ -49,12 +29,16 @@ Output:
 
 Explanation:
 
-Only one score exists.
+There is only one possible group:
+
+```txt
+[90]
+```
 
 Difference:
 
 ```txt
-90 − 90 = 0
+90 - 90 = 0
 ```
 
 ---
@@ -76,21 +60,18 @@ Output:
 
 Explanation:
 
-After sorting:
+Possible groups:
 
 ```txt
-[1,4,7,9]
-```
-
-Possible windows:
-
-```txt
-[1,4] → 3
+[9,4] → 5
+[9,1] → 8
+[9,7] → 2
+[4,1] → 3
 [4,7] → 3
-[7,9] → 2
+[1,7] → 6
 ```
 
-Minimum:
+Minimum difference:
 
 ```txt
 2
@@ -100,47 +81,60 @@ Minimum:
 
 ## Approach — Sorting + Fixed Window
 
-Since only:
+Without sorting, we must compare every possible group of `k` students.
+
+For example:
 
 ```txt
-highest
--
-lowest
+nums = [9,4,1,7]
+k = 2
 ```
 
-matters,
-
-sorting places close values together.
-
-Then:
-
-Slide a window of size:
+Possible groups:
 
 ```txt
-k
+[9,4]
+[9,1]
+[9,7]
+[4,1]
+[4,7]
+[1,7]
 ```
 
-and compute:
+Checking every combination becomes expensive as the array grows.
+
+Instead, sort the array:
 
 ```txt
-windowMax
--
-windowMin
+[1,4,7,9]
 ```
 
-Track the minimum.
+After sorting, numbers with the smallest difference will always be adjacent.
+
+Now we only need to examine every consecutive window of size `k`.
+
+```txt
+[1,4] → 3
+[4,7] → 3
+[7,9] → 2
+```
+
+The minimum difference among all windows is the answer.
 
 ---
 
 ## Steps
 
-1. Sort the array
-2. Create window of size `k`
-3. Calculate difference:
-   - last value
-   - first value
+1. Sort the array.
+2. Create a fixed-size window of length `k`.
+3. For each window, compute:
 
-4. Track minimum
+```txt
+lastElement - firstElement
+```
+
+4. Track the minimum difference.
+5. Return the answer.
 
 ---
 
@@ -159,12 +153,28 @@ Sort:
 [1,4,7,9]
 ```
 
-Windows:
+Window 1:
 
 ```txt
-[1,4] → 3
-[4,7] → 3
-[7,9] → 2
+[1,4]
+
+Difference = 3
+```
+
+Window 2:
+
+```txt
+[4,7]
+
+Difference = 3
+```
+
+Window 3:
+
+```txt
+[7,9]
+
+Difference = 2
 ```
 
 Answer:
@@ -183,7 +193,7 @@ Answer:
 O(n log n)
 ```
 
-Sorting dominates.
+Sorting dominates the overall complexity.
 
 ### Space Complexity
 
@@ -191,15 +201,15 @@ Sorting dominates.
 O(1)
 ```
 
-Ignoring sorting implementation.
+Ignoring the space used by the sorting algorithm.
 
 ---
 
 ## Pattern
 
-- Sorting
-- Fixed Window
-- Array Traversal
+* Sorting
+* Fixed Sliding Window
+* Array Traversal
 
 ---
 
@@ -207,26 +217,28 @@ Ignoring sorting implementation.
 
 ### Sorting
 
-- Sort an Array
-- Merge Sort
-- Quick Sort
+* Sort an Array
+* Merge Sort
+* Quick Sort
 
 ### Sliding Window
 
-- Maximum Average Subarray
-- [Minimum Recolors to Get K Consecutive Black Blocks](../../strings/minimum-recolors-to-get-k-consecutive-black-blocks/)
+* Minimum Recolors to Get K Consecutive Black Blocks
+* Maximum Average Subarray
+* Find All Anagrams in a String
 
 ### Similar Thinking
 
-- [Contains Duplicate](../contains-duplicate/)
-- [Top K Frequent Elements](../top-k-frequent-elements/)
+* Contains Duplicate
+* Top K Frequent Elements
 
 ---
 
 ## Notes
 
-- Sorting is the key insight.
-- Window size never changes.
-- Compare only first and last value of each window.
-- No need to calculate all pair differences.
-- Great beginner Sorting + Window problem.
+* Sorting is the key insight.
+* The minimum difference will always be found between consecutive elements in the sorted array.
+* Window size remains fixed at `k`.
+* Only compare the first and last elements of each window.
+* Avoid checking every possible combination of students.
+* Great introductory problem combining Sorting and Fixed Sliding Window.
