@@ -430,8 +430,8 @@ index
 
 Stack:
 
-- Min Stack
-- Next Greater Element I
+- [Min Stack](../../stacks/min-stack/)
+- [Next Greater Element I](../next-greater-element-i/)
 
 Monotonic Stack:
 
