@@ -182,21 +182,21 @@ Only lowercase English letters are used, so the frequency arrays have a fixed si
 
 ### Sliding Window
 
-- Find All Anagrams in a String
-- Longest Repeating Character Replacement
-- Longest Substring Without Repeating Characters
-- Minimum Recolors to Get K Consecutive Black Blocks
+- [Find All Anagrams in a String](../find-all-anagrams-in-a-string/)
+- [Longest Repeating Character Replacement](../longest-repeating-character-replacement/)
+- [Longest Substring Without Repeating Characters](../longest-substring-without-repeating-characters/)
+- [Minimum Recolors to Get K Consecutive Black Blocks](../minimum-recolors-to-get-k-consecutive-black-blocks/)
 
 ### Hashing
 
-- Valid Anagram
-- Group Anagrams
-- Contains Duplicate
+- [Valid Anagram](../valid-anagram/)
+- [Group Anagrams](../group-anagrams/)
+- [Contains Duplicate](../../arrays/contains-duplicate/)
 
 ### Similar Thinking
 
 - Minimum Window Substring
-- Top K Frequent Elements
+- [Top K Frequent Elements](../../arrays/top-k-frequent-elements/)
 
 ---
 
