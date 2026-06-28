@@ -1,3 +1,8 @@
+// | Approach       | Time     | Space                     |
+// | -------------- | -------- | ------------------------- |
+// | Your solution  | O(n × m) | O(26) + temporary strings |
+// | Sliding Window | O(n)     | O(26)                     |
+
 function checkInclusion(s1: string, s2: string): boolean {
   function convert(str: string) {
     let value = new Array(26).fill(0);
