@@ -31,3 +31,5 @@ queueMicrotask(() => {
 });
 
 console.log("I");
+
+export {};
