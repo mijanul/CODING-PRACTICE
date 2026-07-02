@@ -15,3 +15,5 @@ queueMicrotask(() => {
 Promise.resolve().then(() => {
   console.log("D");
 });
+
+export {};

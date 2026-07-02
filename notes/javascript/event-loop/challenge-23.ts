@@ -3,18 +3,18 @@ console.log("A");
 async function foo() {
   console.log("B");
 
-  await Promise.resolve().then(() => {
-    console.log("C");
+  await null;
 
-    return "Hello";
-  });
-
-  console.log("D");
+  console.log("C");
 }
+
+Promise.resolve().then(() => {
+  console.log("D");
+});
 
 foo();
 
-Promise.resolve().then(() => {
+queueMicrotask(() => {
   console.log("E");
 });
 
