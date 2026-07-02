@@ -31,3 +31,5 @@ setTimeout(() => {
 }, 0);
 
 console.log(9);
+
+export {};
