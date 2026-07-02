@@ -1,23 +1,17 @@
-console.log("A");
-
 async function foo() {
+  console.log("A");
+
+  await null;
+
   console.log("B");
-
-  await Promise.resolve().then(() => {
-    console.log("C");
-
-    return Promise.resolve("Hello");
-  });
-
-  console.log("D");
 }
 
 foo();
 
-Promise.resolve().then(() => {
-  console.log("E");
+queueMicrotask(() => {
+  console.log("C");
 });
 
-console.log("F");
-
-export {};
+Promise.resolve().then(() => {
+  console.log("D");
+});
