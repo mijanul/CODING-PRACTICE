@@ -25,3 +25,5 @@ setTimeout(() => {
 }, 0);
 
 console.log("H");
+
+export {};
