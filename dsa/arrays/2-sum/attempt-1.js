@@ -15,4 +15,6 @@ function twoSum(nums, target) {
   }
 }
 
+export {};
+
 console.log(twoSum(nums, target));
