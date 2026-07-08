@@ -21,4 +21,6 @@ function isAnagram(s, t) {
   return true;
 }
 
+export {};
+
 console.log(isAnagram("anaaaaa", "anagram"));
