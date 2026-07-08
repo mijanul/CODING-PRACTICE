@@ -42,4 +42,6 @@ function threeSum(nums) {
   return result;
 }
 
+export {};
+
 console.log(threeSum(nums));
