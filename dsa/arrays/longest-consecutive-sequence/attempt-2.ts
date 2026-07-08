@@ -1,4 +1,3 @@
-// Brute Force # 2
 function longestConsecutive(nums: number[]): number {
   let maxLength = 0;
   let data = new Set(nums);
