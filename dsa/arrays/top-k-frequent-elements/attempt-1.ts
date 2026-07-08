@@ -22,4 +22,6 @@ function topKFrequent(nums: number[], k: number): number[] {
   return result.slice(0, k);
 }
 
-console.log(topKFrequent([1, 1, 1, 2, 2, 3], 2));
+export {};
+
+console.log(topKFrequent([1, 1, 1, 2, 2, 3], 2)); // [1, 2]
