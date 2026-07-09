@@ -169,21 +169,21 @@ O(n)
 
 ### Hashing
 
-- Contains Duplicate
-- Contains Duplicate II
-- Valid Anagram
-- Group Anagrams
-- Top K Frequent Elements
+- [Contains Duplicate](../../arrays/contains-duplicate/)
+- [Contains Duplicate II](../../arrays/contains-duplicate-ii/)
+- [Valid Anagram](../../strings/valid-anagram/)
+- [Group Anagrams](../../strings/group-anagrams/)
+- [Top K Frequent Elements](../../arrays/top-k-frequent-elements/)
 
 ### Set Operations
 
 - Intersection of Two Arrays II
-- Longest Consecutive Sequence
+- [Longest Consecutive Sequence](../longest-consecutive-sequence/)
 
 ### Similar Thinking
 
-- Two Sum
-- Find All Anagrams in a String
+- [Two Sum](../../arrays/2-sum/)
+- [Find All Anagrams in a String](../../strings//find-all-anagrams-in-a-string/)
 
 ---
 
