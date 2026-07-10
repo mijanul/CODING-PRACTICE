@@ -198,10 +198,10 @@ The merge is performed in-place.
 
 ### Two Pointers
 
-- Two Sum II
-- Valid Palindrome
-- Container With Most Water
-- Is Subsequence
+- [Two Sum II](../2-sum-ii/)
+- [Valid Palindrome](../../strings/valid-palindrome/)
+- [Container With Most Water](../container-with-most-water/)
+- [Is Subsequence](../../strings/is-subsequence/)
 
 ### Arrays
 
