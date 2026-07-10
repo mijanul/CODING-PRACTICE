@@ -37,5 +37,6 @@ function merge(left: number[], right: number[]): number[] {
 
   return result;
 }
+export {};
 
 console.log(mergeSort([1, 9, 2, 3, 3, 5, 7, 8]));
