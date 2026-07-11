@@ -160,19 +160,19 @@ The array is modified in-place.
 
 ### Reverse Traversal
 
-- Merge Sorted Array
-- Daily Temperatures
+- [Merge Sorted Array](../merge-sorted-array/)
+- [Daily Temperatures](../daily-temperatures/)
 
 ### Arrays
 
-- Product of Array Except Self
-- Rotate Array
-- Sort an Array
+- [Product of Array Except Self](../product-of-array-except-self/)
+- [Rotate Array](../rotate-array/)
+- [Sort an Array](../sort-an-array/)
 
 ### Similar Thinking
 
-- Trapping Rain Water
-- Best Time to Buy and Sell Stock
+- [Trapping Rain Water](../trapping-rain-water/)
+- [Best Time to Buy and Sell Stock](../best-time-to-buy-and-sell-stock/)
 
 ---
 
