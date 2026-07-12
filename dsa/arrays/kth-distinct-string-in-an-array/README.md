@@ -209,16 +209,16 @@ For the frequency map.
 
 ### Hashing
 
-- Valid Anagram
-- Group Anagrams
-- Top K Frequent Elements
-- Contains Duplicate
+- [Valid Anagram](../../strings/valid-anagram/)
+- [Group Anagrams](../../strings/group-anagrams/)
+- [Top K Frequent Elements](../top-k-frequent-elements/)
+- [Contains Duplicate](../contains-duplicate/)
 
 ### Strings
 
-- Find All Anagrams in a String
-- Permutation in String
-- Encode and Decode Strings
+- [Find All Anagrams in a String](../../strings/find-all-anagrams-in-a-string/)
+- [Permutation in String](../../strings/permutation-in-string/)
+- [Encode and Decode Strings](../../strings/encode-and-decode-strings/)
 
 ### Similar Thinking
 
