@@ -181,20 +181,20 @@ For storing normalized emails in the Hash Set.
 
 ### Hashing
 
-- Contains Duplicate
+- [Contains Duplicate](../contains-duplicate/)
 - Intersection of Two Arrays
-- Top K Frequent Elements
-- Kth Distinct String in an Array
+- [Top K Frequent Elements](../top-k-frequent-elements/)
+- [Kth Distinct String in an Array](../kth-distinct-string-in-an-array/)
 
 ### String Parsing
 
-- Number of Senior Citizens
-- Encode and Decode Strings
+- [Number of Senior Citizens](../../strings/number-of-senior-citizens/)
+- [Encode and Decode Strings](../../strings/encode-and-decode-strings/)
 
 ### Similar Thinking
 
-- Valid Anagram
-- Group Anagrams
+- [Valid Anagram](../../strings/valid-anagram/)
+- [Group Anagrams](../../strings/group-anagrams/)
 
 ---
 
