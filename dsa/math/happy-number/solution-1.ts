@@ -22,5 +22,7 @@ function isHappy(n: number): boolean {
   return n === 1;
 }
 
+export {};
+
 console.log(isHappy(19));
 console.log(isHappy(2));
