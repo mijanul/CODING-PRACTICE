@@ -26,5 +26,7 @@ function mergeAlternately(word1: string, word2: string): string {
   return res;
 }
 
+export {};
+
 console.log(mergeAlternately("abc", "pqr"));
 console.log(mergeAlternately("xy", "abcdefg"));
