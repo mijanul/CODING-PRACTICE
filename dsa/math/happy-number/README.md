@@ -246,8 +246,8 @@ For storing previously seen numbers.
 
 ### Hashing
 
-- Contains Duplicate
-- Top K Frequent Elements
+- [Contains Duplicate](../../arrays/contains-duplicate/)
+- [Top K Frequent Elements](../../arrays/top-k-frequent-elements/)
 - Kth Distinct String in an Array
 
 ### Math
