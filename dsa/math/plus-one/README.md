@@ -211,9 +211,9 @@ If a new array is required (e.g., `[9,9,9]`), the output itself uses `O(n)` spac
 
 ### Math
 
-- Palindrome Number
-- Happy Number
-- Ugly Number
+- [Palindrome Number](../palindrome-number/)
+- [Happy Number](../happy-number/)
+- [Ugly Number](../ugly-number/)
 - Factorial
 
 ### Number Manipulation
