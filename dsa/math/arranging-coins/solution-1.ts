@@ -1,3 +1,5 @@
+//*** Time complexity - $O(\sqrt{n})$
+
 function arrangeCoins(n: number): number {
   let start = 1;
 
