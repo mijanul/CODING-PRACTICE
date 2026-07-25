@@ -11,4 +11,6 @@ function arrangeCoins(n: number): number {
   return start - 1;
 }
 
+export {};
+
 console.log(arrangeCoins(5));
